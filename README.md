@@ -1,5 +1,5 @@
 # Budgety
 ## How to install
-Clone repo
-start ```npm i``` and ```npm start``` in _Server_ and _Client_ folders
-App will be running on localhost:3000
+1. Clone repo <br>
+2. Start ```npm i``` and ```npm start``` in _Server_ and _Client_ folders <br>
+3. App will be running on localhost:3000
