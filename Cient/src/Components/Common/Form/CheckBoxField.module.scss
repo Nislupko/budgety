@@ -1,0 +1,86 @@
+@import "../../../assets/variables";
+
+.field {
+    margin-bottom: 0.75rem;
+    height: 4.8125rem;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+
+    width: 330px;
+    max-width: 100%;
+
+    font-size: 13px;
+    text-align: left;
+
+    &.fullWidth {
+        width: 100% !important;
+    }
+
+    .inputContainer {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .input {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        border: 1px solid rgba($white, 0.3);
+        border-radius: 2px;
+
+        transition: 100ms;
+
+        cursor: pointer;
+        overflow: hidden;
+
+        background-color: transparent;
+        background-image: url("../../../assets/filledCheckbox.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-positon: center center;
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            z-index: 9999;
+        }
+    }
+
+    checkIcon {
+        position: absolute;
+        right: 0;
+    }
+
+    .label {
+        font-size: 17px;
+        color: $white;
+        transition: 100ms;
+        opacity: 0.3;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    &.checked {
+        .label {
+            opacity: 1;
+        }
+
+        .input {
+            background-color: $white;
+            background-size: 100% 100%;
+            path {
+                color: transparent;
+            }
+        }
+    }
+
+    .error {
+        margin-top: 5px;
+        height: 1rem;
+        color: mix($error-color, $white, 30%);
+    }
+}

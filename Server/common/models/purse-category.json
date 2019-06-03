@@ -1,0 +1,53 @@
+{
+    "name": "PurseCategory",
+    "plural": "purses-categories",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "id": {
+          "type": "Number",
+          "id": true,
+          "generated": true
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "length": 50
+        },
+        "purse": {
+            "type": "Number",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {
+      "Purse": {
+        "type": "belongsTo",
+        "model": "Purse",
+        "foreignKey": "id"
+      }
+    },
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "add"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "getById"
+        }
+    ],
+    "methods": {}
+}

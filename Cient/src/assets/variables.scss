@@ -1,0 +1,28 @@
+/*
+    Fonts
+*/
+
+$montserrat: "Montserrat";
+$font-family-base: $montserrat, sans-serif;
+
+$font-size-base: 16px;
+$rem-baseline: $font-size-base;
+$rem-fallback: true;
+
+$header-font: "Quicksand";
+
+/*
+    Colors
+*/
+
+$white: #fff;
+$black: #000;
+
+$background-main: #dbdbdb;
+$background-alt: #fabe8b;
+
+$active-main: #3871c1;
+$active-alt: #82a6dd;
+
+$error-color: #aa1106;
+$grey: #202020

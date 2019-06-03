@@ -1,0 +1,50 @@
+@import "../../../assets/variables";
+@import "../../../assets/mixins/underlineText.scss";
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.25rem;
+  max-width: calc(100vw - 2rem);
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+
+  transition: 0ms;
+
+  .link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal !important;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 0.5rem;
+    transition: 300ms ease-in-out;
+    &.extraMargin {
+      margin-left: 28px;
+    }
+    &.activeLink {
+      opacity: 1 !important;
+    }
+  }
+
+  .underline {
+    @include withoutUnderline($active-main);
+    .line {
+      height: 2px;
+      bottom: -0.5rem;
+    }
+
+    &.activeLink {
+      @include withUnderline();
+    }
+  }
+}

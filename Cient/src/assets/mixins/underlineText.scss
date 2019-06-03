@@ -1,0 +1,22 @@
+@mixin withoutUnderline($color) {
+    position: relative;
+    .line {
+        content: " ";
+        position: absolute;
+        transform: scaleX(0);
+        transition: 200ms ease-in-out;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border: 0;
+        background-color: $color;
+    }
+}
+
+@mixin withUnderline() {
+    .line {
+        transform: scaleX(1) !important;
+        transition: 500ms ease-in-out;
+    }
+}

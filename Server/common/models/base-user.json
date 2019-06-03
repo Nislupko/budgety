@@ -1,0 +1,54 @@
+{
+    "name": "BaseUser",
+    "plural": "users",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "realm": false,
+        "username": false,
+        "login": {
+            "type": "string",
+            "required": true,
+            "index": {
+              "unique": true
+            },
+            "length": 50
+        },
+        "password": {
+            "type": "string",
+            "required": true,
+            "length": 100
+        }
+    },
+    "validations": [],
+    "relations": {
+      "PurseOwner": {
+        "type": "hasMany",
+        "model": "PurseOwner",
+        "foreignKey": "user"
+      }
+    },
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "ALLOW",
+            "property": "login"
+        },
+        {
+            "accessType": "EXECUTE",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "ALLOW",
+            "property": "register"
+        }
+    ],
+    "methods": {}
+}

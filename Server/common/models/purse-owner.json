@@ -1,0 +1,44 @@
+{
+    "name": "PurseOwner",
+    "plural": "purse-owners",
+    "base": "PersistedModel",
+    "properties": {
+        "purse": {
+          "type": "Number",
+          "id": 1
+        },
+        "user": {
+          "type": "Number",
+          "id": 2
+        }
+    },
+    "validations": [],
+    "relations": {
+      "Purse": {
+        "type": "belongsTo",
+        "model": "Purse",
+        "foreignKey": "id"
+      },
+      "BaseUser": {
+        "type": "belongsTo",
+        "model": "PurseOwner",
+        "foreignKey": "id"
+      }
+    },
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "add"
+        }
+    ],
+    "methods": {}
+}

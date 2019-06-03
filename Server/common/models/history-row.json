@@ -1,0 +1,68 @@
+{
+    "name": "HistoryRow",
+    "plural": "history-rows",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "id": {
+          "type": "Number",
+          "id": true,
+          "generated": true
+        },
+        "purse": {
+            "type": "Number",
+            "required": true
+        },
+        "category": {
+          "type": "string",
+          "required": true
+        },
+        "comment": {
+          "type": "string"
+        },
+        "date": {
+          "type": "Date",
+          "required": true
+        },
+        "amount": {
+          "type": "Number",
+          "required": true
+        },
+        "balance": {
+          "type": "Number",
+          "required": true
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "add"
+        },
+      {
+        "accessType": "EXECUTE",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "getByUser"
+      },
+      {
+        "accessType": "EXECUTE",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "getByPurse"
+      }
+    ],
+    "methods": {}
+}

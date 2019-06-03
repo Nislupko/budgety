@@ -1,0 +1,53 @@
+@import "../../assets/variables";
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 4rem auto 4rem;
+  background-color: $background-main;
+
+  .header{
+
+    justify-self: center;
+    width: 100%;;
+    height: 100%;
+    background: $background-main;
+    display:grid;
+    grid-template-columns: 10rem 12rem auto 6rem 6rem 10rem;
+    flex-direction: row;
+    & > *:nth-child(4),
+    & > *:nth-child(5){
+      margin-top:1rem;
+    }
+  }
+
+  .footer{
+    width: 100%;
+    height: 100%;
+    background: $background-main;
+    display:grid;
+    grid-template-columns: 10rem auto  10rem;
+    .content{
+      grid-column-start: 2;
+      grid-column-end: 3;
+      display:grid;
+      & > :nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      & > :nth-child(2){
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin:0 0 0 auto;
+      }
+    }
+  }
+
+  .content{
+    justify-self: center;
+    width: 100%;
+    display:grid;
+    background: $background-main;
+  }
+}

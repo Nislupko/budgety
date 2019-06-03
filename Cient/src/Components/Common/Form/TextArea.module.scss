@@ -1,0 +1,158 @@
+@import "../../../assets/variables";
+
+$main-color: rgba(#fff, 0.2);
+.field {
+    margin-bottom: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: 13px;
+    text-align: left;
+
+    &.fullWidth {
+        width: 100% !important;
+    }
+
+    .inputContainer {
+        position: relative;
+    }
+
+    .input {
+        position: relative;
+        display: block;
+        width: 100%;
+        min-height: 3rem;
+        height: 3rem;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+
+        color: $white;
+        font-weight: 500;
+        background: transparent;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $active-main;
+        transition: 100ms;
+
+        line-height: 1.5rem;
+
+        overflow: hidden;
+        resize: none;
+        &::placeholder {
+            opacity: 0;
+            transition: 100ms;
+        }
+
+        &::-webkit-datetime-edit {
+            transition: 100ms;
+            color: black;
+        }
+
+        &:focus,
+        &:not([value=""]),
+        &:-webkit-autofill {
+            border-bottom: 1px solid transparent;
+            &::placeholder {
+                opacity: 1;
+                transition: 500ms;
+            }
+
+            & ~ span {
+                transform: translateY(-3.25 rem);
+                font-size: 12px;
+            }
+
+            &::-webkit-datetime-edit {
+                opacity: 1;
+                transition: 500ms;
+            }
+        }
+
+        &:disabled {
+            opacity: 0.8;
+        }
+
+        &::placeholder {
+            color: $main-color;
+        }
+    }
+
+    .label {
+        display: block;
+        position: relative;
+        top: 100%;
+
+        transform: translateY(-3rem);
+        transition: 300ms;
+
+        margin-bottom: 0;
+        font-size: 17px;
+        color: rgba($white, 0.3);
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    .textArea {
+    }
+
+    .error {
+        margin-top: 5px;
+        height: 1rem;
+        color: mix($error-color, $white, 30%);
+    }
+
+    &.hasError {
+        .input {
+            color: mix($error-color, $white, 30%);
+        }
+    }
+
+    &.lightMode {
+        .input {
+            color: #aeb0bd;
+            border-bottom: 1px solid $grey;
+
+            &::placeholder {
+                opacity: 0;
+                color: rgba($grey, 0.8);
+            }
+
+            &::-webkit-datetime-edit {
+                transition: 100ms;
+                color: $white;
+            }
+
+            &:focus,
+            &:not([value=""]),
+            &:-webkit-autofill {
+                border-bottom: 1px solid $grey;
+            }
+        }
+
+        .label {
+            color: rgba($grey, 0.8);
+        }
+
+        .error {
+            margin-top: 5px;
+            height: 1rem;
+            color: mix($error-color, $black, 70%);
+        }
+
+        &.hasError {
+            .input {
+                color: mix($error-color, $black, 70%);
+            }
+        }
+    }
+}
+.labelOuter {
+    display: block;
+    transform: translateY(0);
+    transition: 300ms;
+
+    margin-bottom: 0;
+    font-size: 13px;
+    color: rgba($white, 0.3);
+    font-weight: 500;
+    white-space: nowrap;
+}

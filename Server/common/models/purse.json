@@ -1,0 +1,63 @@
+{
+    "name": "Purse",
+    "plural": "purses",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "id": {
+          "type": "Number",
+          "id": true,
+          "generated": true
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "length": 50
+        },
+        "balance": {
+            "type": "number",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {
+      "PurseOwner": {
+        "type": "hasMany",
+        "model": "PurseOwner",
+        "foreignKey": "purse"
+      },
+      "PurseCategory": {
+        "type": "hasMany",
+        "model": "PurseCategory",
+        "foreignKey": "purse"
+      },
+      "Purpose": {
+        "type": "hasMany",
+        "model": "Purpose",
+        "foreignKey": "purse"
+      }
+    },
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "add"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "getByLogin"
+        }
+    ],
+    "methods": {}
+}

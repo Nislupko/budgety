@@ -1,0 +1,73 @@
+{
+    "name": "Purpose",
+    "plural": "purposes",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "properties": {
+        "id": {
+          "type": "Number",
+          "id": true,
+          "generated": true
+        },
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "finalAmount": {
+            "type": "number",
+            "required": true
+        },
+        "amount": {
+          "type": "number",
+          "required": true
+        },
+        "startDate": {
+          "type": "date",
+          "required": true
+        },
+        "finalDate": {
+          "type": "date"
+        },
+        "comment": {
+          "type": "string"
+        }
+    },
+    "validations": [],
+    "relations": {
+      "Purse": {
+        "type": "belongsTo",
+        "model": "Purse",
+        "foreignKey": "id"
+      }
+    },
+    "acls": [
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "DENY"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "add"
+        },
+        {
+          "accessType": "EXECUTE",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "ALLOW",
+          "property": "get"
+        },
+      {
+        "accessType": "EXECUTE",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "update"
+      }
+    ],
+    "methods": {}
+}

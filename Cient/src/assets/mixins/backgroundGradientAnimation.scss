@@ -1,0 +1,18 @@
+@keyframes PlaceholderAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@mixin backgroundGradientAnimation($firstColor, $secondColor) {
+    will-change: bacground;
+    background: linear-gradient(268deg, $firstColor, $secondColor);
+    background-size: 40rem 40rem;
+    animation: PlaceholderAnimation 7s ease infinite;
+}

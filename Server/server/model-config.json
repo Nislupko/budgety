@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BaseUser": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "login": true,
+          "register": true
+        }
+      }
+    }
+  },
+  "Purse": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true,
+          "getByLogin": true
+        }
+      }
+    }
+  },
+  "PurseOwner": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true
+        }
+      }
+    }
+  },
+  "PurseCategory": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true,
+          "getById": true
+        }
+      }
+    }
+  },
+  "UserCategory": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true,
+          "getById": true
+        }
+      }
+    }
+  },
+  "HistoryRow": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true,
+          "getByUser": true,
+          "getByPurse": true
+        }
+      }
+    }
+  },
+  "Purpose": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "add": true,
+          "get": true,
+          "update": true
+        }
+      }
+    }
+  }
+}
