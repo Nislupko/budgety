@@ -7,7 +7,7 @@
     "classnames": "^2.2.6",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
-    "highcharts": "^7.1.1",
+    "highcharts": "^9.0.0",
     "http-proxy-middleware": "^0.19.1",
     "https": "^1.0.0",
     "lodash": "^4.17.11",
